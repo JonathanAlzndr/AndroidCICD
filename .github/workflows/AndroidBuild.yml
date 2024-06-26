@@ -21,6 +21,9 @@ jobs:
       - name: Grant Execute Permission to Gradlew
         run: chmod +x gradlew
 
+      - name: Download Dependencies
+        run: ./gradlew androidDependencies
+
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -31,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4.3.3
         with:
           name: AndroidCICD.apk
-          path: app/build/outputs/apk/app-debug.apk
+          path: app/build/outputs/apk/debug/
