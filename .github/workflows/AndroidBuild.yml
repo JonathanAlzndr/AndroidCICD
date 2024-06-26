@@ -24,6 +24,9 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+      - name: Run Tests
+        run: ./gradlew lint test
+
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.3
         with:
